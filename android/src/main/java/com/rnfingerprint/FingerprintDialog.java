@@ -69,6 +69,9 @@ public class FingerprintDialog extends DialogFragment
 
         mCancelButton = (Button) v.findViewById(R.id.cancel_button);
         mCancelButton.setTextColor(color);
+        // 添加cancelText参数用于设定取消按钮文本
+        mCancelButton.setText(authConfig.getString("cancelText"));
+
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +83,9 @@ public class FingerprintDialog extends DialogFragment
          {
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event){
             if (keyCode == KeyEvent.KEYCODE_BACK) {
-              dialogCallback.onCancelled();
+              // 把物理后退键的行为修改为与手动点击取消的行为保持一致
+              mFingerprintHandler.endAuth();
+              // dialogCallback.onCancelled();
               dismiss();
               return true; // pretend we've processed it
             } else {

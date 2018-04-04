@@ -37,10 +37,10 @@
             android:layout_width="49dp"
             android:layout_height="49dp"
             android:layout_marginLeft="25dp"
-            android:gravity="left"
+            android:gravity="center"
             android:src="@drawable/ic_fp_40px" />
 
-        <TextView
+        <!-- <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
@@ -48,7 +48,7 @@
             android:gravity="left"
             android:text="Touch sensor"
             android:textColor="#696969"
-            android:textSize="15dp" />
+            android:textSize="15dp" /> -->
     </LinearLayout>
 
     <Button

@@ -96,6 +96,13 @@ public class FingerprintAuthModule extends ReactContextBaseJavaModule {
     }
   }
 
+    @ReactMethod
+    public void authenticate() {
+        if (!inProgress) {
+            return;
+        }
+    }
+
   /*** TOUH ID ACTIVITY REALTED STUFF ***/
   private FingerprintDialog fingerprintDialog;
 
